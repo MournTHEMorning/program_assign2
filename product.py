@@ -7,20 +7,20 @@ class Product:
         self.cost=product_cost
         self.monthly_unit=product_monthUnit
     
-    def getCode(self):
-        return self.code
+    # def getCode(self):
+    #     return self.code
 
-    def getName(self):
-        return self.name
+    # def getName(self):
+    #     return self.name
 
-    def getPrice(self):
-        return self.price
+    # def getPrice(self):
+    #     return self.price
 
-    def getCost(self):
-        return self.cost
+    # def getCost(self):
+    #     return self.cost
 
-    def getStock(self):
-        return self.stock
+    # def getStock(self):
+    #     return self.stock
 
-    def getMonthly_Unit(self):
-        return self.monthly_unit
+    # def getMonthly_Unit(self):
+    #     return self.monthly_unit
