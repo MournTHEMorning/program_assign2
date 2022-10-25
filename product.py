@@ -6,3 +6,6 @@ class Product:
         self.cost=product_cost
         self.stock=product_stock
         self.monthly_unit=product_monthUnit
+    
+    def getCode(self):
+        return self.code
