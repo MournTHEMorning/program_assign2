@@ -29,9 +29,20 @@ item=product.Product(userCode,userName,userStock,userPrice,userCost,userMonthlyP
 #print(item.getCode(), item.getName(), item.getStock(),item.getPrice(),item.getCost(), item.getMonthly_Unit())
 
 print(" * "*7,"Programming Principles Stock Statement"," * "*7)
-print("Product Code: {}\nProduct Name: {}\n\nSale Price: {} CAD\nManufacture Cost: {} CAD \nMonthly Production: {} units (Approx.)".format(userCode,userName,userStock,userPrice,userCost,userMonthlyProduction))
+print("Product Code: {}\nProduct Name: {}\n\nSale Price: {} CAD\nManufacture Cost: {} CAD \nMonthly Production: {} units (Approx.)".format(userCode,userName,userPrice,userCost,userMonthlyProduction))
 
 simVal=simulate(random.randint(0,10))
 print("simVal: ", simVal)
 
-print("Month ###:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units".format(userMonthlyProduction,(userMonthlyProduction+simVal),userStock-(simVal%20)))
+totalManufactured=userMonthlyProduction
+totalSold=userMonthlyProduction+simVal
+for month in range(13,1):
+    print("Month {}:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units\n".format(month,totalManufactured, totalSold,(userStock-(simVal%20))))
+
+# print((totalSold*userPrice))
+# print(totalManufactured*userCost)
+print("$",(totalSold*userPrice)-(totalManufactured*userCost), "CAD")
+
+
+#(Total Units Sold * Sale Price) - (Total Units Manufactured * Manufacture Cost)
+#(totalSold*userPrice)-(totalManufactured*userCost)
