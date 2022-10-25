@@ -29,7 +29,7 @@ item=product.Product(userCode,userName,userStock,userPrice,userCost,userMonthlyP
 #print(item.getCode(), item.getName(), item.getStock(),item.getPrice(),item.getCost(), item.getMonthly_Unit())
 
 print("\n"," * "*7,"Programming Principles Stock Statement"," * "*7)
-print("Product Code: {}\nProduct Name: {}\n\nSale Price: {} CAD\nManufacture Cost: {} CAD \nMonthly Production: {} units (Approx.)".format(userCode,userName,userPrice,userCost,userMonthlyProduction))
+print("\nProduct Code: {}\nProduct Name: {}\n\nSale Price: {} CAD\nManufacture Cost: {} CAD \nMonthly Production: {} units (Approx.)".format(userCode,userName,userPrice,userCost,userMonthlyProduction))
 
 #print("simVal: ", simVal)
 
@@ -40,9 +40,14 @@ for month in range(1,13):
     simVal=simulate(random.randint(0,10))
     totalManufactured+=userMonthlyProduction
     totalSold+=userMonthlyProduction+simVal
-    print("Month {}:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units\n".format(month,userMonthlyProduction,(userMonthlyProduction+simVal),(userStock-(simVal%20))))
+    if(simVal<0):
+        userStock+=(simVal%20)
+    else:
+        userStock-=simVal
+    #note: if you lose product, or random value = -, then you add that value to your stock. from observations . Fix this 
+    print("\nMonth {}:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units\n".format(month,userMonthlyProduction,(userMonthlyProduction+simVal),userStock))
 
-    print(totalManufactured, totalSold)
+    print(simVal,userStock, totalManufactured, totalSold)
     input(" INPUT TO CONTINUE: ")
 
 # print((totalSold*userPrice))
@@ -54,4 +59,3 @@ print("\n\nNet Profit: $",(totalSold*userPrice)-(totalManufactured*userCost), "C
 #(Total Units Sold * Sale Price) - (Total Units Manufactured * Manufacture Cost)
 #(totalSold*userPrice)-(totalManufactured*userCost)
 
-#note: if you lose product, or random value = -, then you add that value to your stock. from observations 
