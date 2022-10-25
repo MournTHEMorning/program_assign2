@@ -40,12 +40,18 @@ for month in range(1,13):
     simVal=simulate(random.randint(0,10))
     totalManufactured+=userMonthlyProduction
     totalSold+=userMonthlyProduction+simVal
-    print("Month {}:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units\n".format(month,totalManufactured, totalSold,(userStock-(simVal%20))))
+    print("Month {}:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units\n".format(month,userMonthlyProduction,(userMonthlyProduction+simVal),(userStock-(simVal%20))))
+
+    print(totalManufactured, totalSold)
+    input(" INPUT TO CONTINUE: ")
 
 # print((totalSold*userPrice))
 # print(totalManufactured*userCost)
 print("\n\nNet Profit: $",(totalSold*userPrice)-(totalManufactured*userCost), "CAD")
 
 
+
 #(Total Units Sold * Sale Price) - (Total Units Manufactured * Manufacture Cost)
 #(totalSold*userPrice)-(totalManufactured*userCost)
+
+#note: if you lose product, or random value = -, then you add that value to your stock. from observations 
