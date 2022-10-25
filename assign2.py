@@ -22,7 +22,7 @@ userName=input("Please enter the Product Name: ")
 userStock=int(input("Please enter the Current Stock: "))
 userPrice=float(input("Please enter the Product Sale Price: "))
 userCost=float(input("Please enter the Product Manufacture Cost: "))
-userMonthlyProduction=float(input("Please enter estimated monthly production: "))
+userMonthlyProduction=int(input("Please enter estimated monthly production: "))
 
 
 item=product.Product(userCode,userName,userStock,userPrice,userCost,userMonthlyProduction)
@@ -31,6 +31,7 @@ item=product.Product(userCode,userName,userStock,userPrice,userCost,userMonthlyP
 print(" * "*7,"Programming Principles Stock Statement"," * "*7)
 print("Product Code: {}\nProduct Name: {}\n\nSale Price: {} CAD\nManufacture Cost: {} CAD \nMonthly Production: {} units (Approx.)".format(userCode,userName,userStock,userPrice,userCost,userMonthlyProduction))
 
-simulate(random.randint(0,10))
+simVal=simulate(random.randint(0,10))
+print("simVal: ", simVal)
 
-print("Month ###:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units".format(item.monthly_unit,))
+print("Month ###:\n\tManufactured: {} units\n\tSold: {} units\n\tStock: {} units".format(userMonthlyProduction,(userMonthlyProduction+simVal),userStock-(simVal%20)))
