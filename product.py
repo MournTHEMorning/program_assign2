@@ -1,5 +1,6 @@
 """Product class: Creates an item that is sold and is monitored"""
 class Product:
+    #establishing variables for class Product
     def __init__(self, product_code, product_name,product_stock, product_price, product_cost, product_monthUnit):
         self.code=product_code
         self.name=product_name
@@ -8,7 +9,7 @@ class Product:
         self.cost=product_cost
         self.monthly_unit=product_monthUnit
     
-    #GETTER METHODS 
+    #GETTER METHODS, which "get" the variables and return them to assign2.py
     def getCode(self):
         return self.code
 

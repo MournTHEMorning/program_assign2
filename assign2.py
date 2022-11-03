@@ -1,5 +1,4 @@
 import product, random
-#assignment 2 created
 
 #for each simulation, it recieves a random value and determines a gain [+]or loss[-] 
 def simulate(rand):
@@ -18,7 +17,7 @@ def simulate(rand):
 
 #player assigning values
 print("Welcome to Programming Principles Product Inventory")
-code=input("Please enter the Product Code: ")
+code=int(input("Please enter the Product Code: "))
 name=input("Please enter the Product Name: ")
 stock=int(input("Please enter the Current Stock: "))
 price=float(input("Please enter the Product Sale Price: "))
@@ -61,7 +60,7 @@ for month in range(1,13):
     if(simVal<0):
         userStock+=(simVal%20)
 
-    #if there is a higher demand, use up ze stock
+    #if there is a higher demand, use up the stock
     else:
         userStock-=simVal
 
