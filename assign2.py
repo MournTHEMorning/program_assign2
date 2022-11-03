@@ -32,6 +32,7 @@ while (varLoop):
         price=float(input("Please enter the Product Sale Price: "))
         cost=float(input("Please enter the Product Manufacture Cost: "))
         monthProduction=int(input("Please enter estimated monthly production: "))
+        #ends loop
         varLoop=False
 
     #if data is invalid type, the loop reruns
@@ -56,7 +57,6 @@ print("\nProduct Code: {}\nProduct Name: {}\n\nSale Price: {} CAD\nManufacture C
 #establishing variables that will be printed at end. 
 #totalManufactured will count how many manufactured
 totalManufactured=0
-
 #totalSold will count sales
 totalSold=0
 
